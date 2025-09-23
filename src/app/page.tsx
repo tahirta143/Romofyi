@@ -3,310 +3,174 @@ import Image from "next/image";
 
 function Home() {
   return (
-    <div>
-      <div className="flex bg-[url('/bg.jpg')] bg-cover bg-center">
-        <div className="mt-40 ml-10  space-x-2">
-          <h1 className="text-7xl font-extrabold mt-6 p-6 text-blue-950">
+    <div className="overflow-x-hidden">
+      {/* Hero Section */}
+      <div className="flex flex-col lg:flex-row bg-[url('/bg.jpg')] bg-cover bg-center px-6 lg:px-16 py-20">
+        <div className="space-y-4 lg:mt-20 text-center lg:text-left">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-blue-950">
             Romofyi
           </h1>
-          <h1 className="text-8xl font-bold p-1 text-yellow-600">
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-yellow-600">
             Trands 2019
           </h1>
-          <h1 className="text-3xl p-2 ml-10">
+          <h1 className="text-lg sm:text-xl lg:text-2xl">
             A huge fashion collection for ever
           </h1>
-          <button className="bg-blue-900 mt-10 ml-9 text-white  rounded-full w-40 h-14 hover:bg-yellow-600 mr-10 transition-all duration-700 ease-in-out hover:scale-105">
+          <button className="bg-blue-900 text-white rounded-full px-6 py-3 hover:bg-yellow-600 transition-all duration-700 ease-in-out hover:scale-105">
             Shop now
           </button>
         </div>
-        <div className="mt-[150px] ml-60  w-96 ">
-          <Image src="/girl.jpg" alt="" />
-        </div>
-      </div>
-      <div className="flex mt-3">
-        <div className="w-52 h-52 bg-yellow-600">
-          {" "}
+
+        <div className="mt-10 lg:mt-0 lg:ml-20 flex justify-center">
           <Image
-            src="https://html.design/demo/romofyi/images/shoes.png"
-            alt=""
-            className="ml-12 mt-14"
+            src="/girl.jpg"
+            alt="Girl"
+            width={400}
+            height={400}
+            className="max-w-full h-auto"
           />
-          <h1 className="ml-16 text-white font-bold">Shoes</h1>
-        </div>
-        <div className="w-52 h-52 bg-blue-950">
-          {" "}
-          <Image
-            src="https://html.design/demo/romofyi/images/underwear.png"
-            alt=""
-            className="ml-12 mt-14"
-          />
-          <h1 className="ml-[56px] text-white font-bold">underwear</h1>
-        </div>{" "}
-        <div className="w-52 h-52 bg-yellow-600">
-          {" "}
-          <Image
-            src="https://html.design/demo/romofyi/images/pent.png"
-            alt=""
-            className="ml-12 mt-14"
-          />
-          <h1 className="ml-12 text-white font-bold">Pante & socks</h1>
-        </div>{" "}
-        <div className="w-52 h-52 bg-blue-950">
-          {" "}
-          <Image
-            src="https://html.design/demo/romofyi/images/t_shart.png"
-            alt=""
-            className="ml-12 mt-14"
-          />
-          <h1 className="ml-8 text-white font-bold">T-shirt & tankstop</h1>
-        </div>{" "}
-        <div className="w-52 h-52 bg-yellow-600">
-          {" "}
-          <Image
-            src="https://html.design/demo/romofyi/images/jakit.png"
-            alt=""
-            className="ml-12 mt-14"
-          />
-          <h1 className="ml-16 text-white font-bold">cardigans & jumpers</h1>
-        </div>{" "}
-        <div className="w-56 h-52 bg-blue-950">
-          {" "}
-          <Image
-            src="https://html.design/demo/romofyi/images/helbet.png"
-            alt=""
-            className="ml-16 mt-14"
-          />
-          <h1 className="ml-20 text-white font-bold">Top & hat</h1>
         </div>
       </div>
 
-      <div>
-        <h1 className="text-4xl font-bold ml-20 mt-20">Featured Products</h1>
+      {/* Categories */}
+      <div className="flex flex-wrap justify-center gap-4 mt-10 px-4">
+        {[
+          { src: "shoes.png", label: "Shoes" },
+          { src: "underwear.png", label: "Underwear" },
+          { src: "pent.png", label: "Pant & Socks" },
+          { src: "t_shart.png", label: "T-shirt & Tanktop" },
+          { src: "jakit.png", label: "Cardigans & Jumpers" },
+          { src: "helbet.png", label: "Top & Hat" },
+        ].map((item, i) => (
+          <div
+            key={i}
+            className={`w-40 sm:w-48 h-52 flex flex-col items-center justify-center ${
+              i % 2 === 0 ? "bg-yellow-600" : "bg-blue-950"
+            }`}
+          >
+            <Image
+              src={`https://html.design/demo/romofyi/images/${item.src}`}
+              alt={item.label}
+              width={100}
+              height={100}
+            />
+            <h1 className="text-white font-bold mt-2 text-center">
+              {item.label}
+            </h1>
+          </div>
+        ))}
       </div>
-      <div className="bg-yellow-600 h-3 w-80:"></div>
-      <div>
-        <div className="w-full h-[300px] flex flex-wrap justify-center space-x-6 mt-10">
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/shoes1.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/shoes2.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>{" "}
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/shoes3.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>{" "}
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/shoes4.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>{" "}
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/shoes5.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>
+
+      {/* Featured Products */}
+      <div className="mt-16 px-4">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center">
+          Featured Products
+        </h1>
+        <div className="bg-yellow-600 h-1 w-40 mx-auto my-4"></div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mt-8 p-3">
+          {[
+            "shoes1.png",
+            "shoes2.png",
+            "shoes3.png",
+            "shoes4.png",
+            "shoes5.png",
+            "tisat1.png",
+            "tisat2.png",
+            "tisat3.png",
+            "tisat4.png",
+            "tisat5.png",
+            "mix1.png",
+            "mix2.png",
+            "mix3.png",
+            "mix4.png",
+            "mix5.png",
+          ].map((src, i) => (
+            <div
+              key={i}
+              className="bg-[#f2f2f2] p-4 flex flex-col items-center"
+            >
+              <Image
+                src={`https://html.design/demo/romofyi/images/${src}`}
+                alt="Product"
+                width={140}
+                height={200}
+              />
+              <h1 className="text-center mt-4 text-sm sm:text-base">
+                Short Openwork Cardigan $120.00
+              </h1>
+            </div>
+          ))}
         </div>
-        <div className="w-full h-[300px] flex flex-wrap justify-center space-x-6 mt-10">
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/tisat1.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/tisat2.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>{" "}
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/tisat3.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>{" "}
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/tisat4.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>{" "}
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/tisat5.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>
-        </div>
-        <div className="w-full h-[300px] flex flex-wrap justify-center space-x-6 mt-10">
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/mix1.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/mix2.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>{" "}
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/mix3.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>{" "}
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/mix4.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>{" "}
-          <div className="w-52 h-64  bg-[#f2f2f2]">
-            <Image
-              src="https://html.design/demo/romofyi/images/mix5.png"
-              alt=""
-              className="ml-6 mt-8"
-            />
-            <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
-          </div>
-        </div>
-        <div className="justify-center items-center mt-6">
-          <button className="bg-blue-900 mt-10 ml-[580px] text-white  rounded-full w-40 h-14 hover:bg-yellow-600 mr-10 transition-all duration-700 ease-in-out hover:scale-105">
+
+        <div className="flex justify-center mt-10">
+          <button className="bg-blue-900 text-white rounded-full px-6 py-3 hover:bg-yellow-600 transition-all duration-700 ease-in-out hover:scale-105">
             See More
           </button>
         </div>
       </div>
-      <div className="mt-20">
+
+      {/* Fashion Banner */}
+      <div className="mt-20 flex justify-center ">
         <Image
           src="https://html.design/demo/romofyi/images/fashion.jpg"
-          alt=""
+          alt="Fashion Banner"
+          width={1200}
+          height={400}
+          className="max-w-full h-auto "
         />
       </div>
-      <div>
-        <h1 className="text-4xl font-semibold ml-20 mt-20">Letest News</h1>
-        <div className="w-[1100px] h-2 ml-20 bg-yellow-600"></div>
-        <div className="flex  mt-8 justify-center space-x-6">
-          <Image
-            src="https://html.design/demo/romofyi/images/news_img1.jpg"
-            alt=""
-            className="mr-7"
-          />
-          <div className="mr-16">
-            <h1 className="font-bold text-2xl">
-              Specimen book. It has survived not only five
-            </h1>
-            <div className="flex justify-center space-x-80 mt-4">
-              <p>7 July 2019</p>
-              <p>Like Comment</p>
-            </div>
-            <p className="mt-16">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. <br /> Lorem Ipsum has been the industry&apos;s standard
-              dummy text ever since the <br /> 1500s, when an unknown printer
-              took a galley of type and scrambled it to <br /> make a type
-              specimen book.
-            </p>
-          </div>
-        </div>
-        <div className="flex  mt-8 justify-center space-x-6">
-          <Image
-            src="https://html.design/demo/romofyi/images/news_img2.jpg"
-            alt=""
-            className="mr-7"
-          />
-          <div className="mr-16">
-            <h1 className="font-bold text-2xl">
-              Specimen book. It has survived not only five
-            </h1>
-            <div className="flex justify-center space-x-80 mt-4">
-              <p>7 July 2019</p>
-              <p>Like Comment</p>
-            </div>
-            <p className="mt-16">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. <br /> Lorem Ipsum has been the industry&apos;s standard
-              dummy text ever since the <br /> 1500s, when an unknown printer
-              took a galley of type and scrambled it to <br /> make a type
-              specimen book.
-            </p>
-          </div>
-        </div>
-        <div className="flex  mt-8 justify-center space-x-6">
-          <Image
-            src="https://html.design/demo/romofyi/images/news_img3.jpg"
-            alt=""
-            className="mr-7"
-          />
-          <div className="mr-16">
-            <h1 className="font-bold text-2xl">
-              Specimen book. It has survived not only five
-            </h1>
-            <div className="flex justify-center space-x-80 mt-4">
-              <p>7 July 2019</p>
-              <p>Like Comment</p>
-            </div>
-            <p className="mt-16">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. <br /> Lorem Ipsum has been the industry&apos;s standard
-              dummy text ever since the <br /> 1500s, when an unknown printer
-              took a galley of type and scrambled it to <br /> make a type
-              specimen book.
-            </p>
-          </div>
-        </div>
-        <div className="flex justify-center mt-10 space-x-7">
-          <h1 className="text-3xl">Subscribe To The Newsletter</h1>
 
+      <div className="mt-20 px-4 ml-16 lg:ml-32 mb-16">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-center lg:text-left">
+          Latest News
+        </h1>
+        <div className="bg-yellow-600 h-1 w-40 my-4 mx-auto lg:mx-0"></div>
+
+        {["news_img1.jpg", "news_img2.jpg", "news_img3.jpg"].map((img, i) => (
+          <div
+            key={i}
+            className="flex flex-col lg:flex-row items-center gap-6 mt-10"
+          >
+            <Image
+              src={`https://html.design/demo/romofyi/images/${img}`}
+              alt="News"
+              width={360}
+              height={200}
+              className="rounded-lg "
+            />
+            <div>
+              <h1 className="font-bold text-xl sm:text-2xl">
+                Specimen book. It has survived not only five
+              </h1>
+              <div className="flex justify-between text-sm mt-2">
+                <p>7 July 2019</p>
+                <p>Like · Comment</p>
+              </div>
+              <p className="mt-4 text-sm sm:text-base">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. <br /> Lorem Ipsum has been the industry&apos;s
+                standard dummy text ever since the 1500s.
+              </p>
+            </div>
+          </div>
+        ))}
+
+        <div className="text-center mt-16 space-y-4">
+          <h1 className="text-2xl sm:text-3xl font-semibold">
+            Subscribe To The Newsletter
+          </h1>
           <input
             type="email"
-            placeholder="Enter your email "
-            className="w-80 ml-20 h-10 border-2 p-2  rounded-full"
+            placeholder="Enter your email"
+            className="w-full sm:w-80 h-10 border-2 rounded-full px-4"
           />
+          <div>
+            <button className="bg-blue-950 text-white rounded-full px-6 py-2 mt-2 hover:bg-yellow-600 transition-all duration-700 ease-in-out hover:scale-105">
+              Subscribe
+            </button>
+          </div>
         </div>
-        <button className="bg-blue-950 mt-0 ml-[840px] text-white w-40 rounded-full h-10 hover:bg-yellow-600 hover:transition-all duration-700 ease-in-out hover:scale-105">
-          Subscribe
-        </button>
       </div>
     </div>
   );

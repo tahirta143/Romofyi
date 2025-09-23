@@ -1,6 +1,6 @@
 import React from "react";
 import { FiSearch } from "react-icons/fi";
-import { Mail, Phone, ShoppingBag, ShoppingCart } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import {
   FaFacebook,
   FaInstagram,
@@ -11,95 +11,88 @@ import {
 
 function Header() {
   return (
-    <div>
-      <nav className="flex justify-between  text-black bg-slate-300   p-3">
-        <span className="flex items-center  text-black cursor-pointer underline hover:text-blue-500">
-          <Phone size={20} className="ml-10" />
-
+    <div className="w-full">
+      {/* Top Bar */}
+      <nav className="flex flex-col md:flex-row md:justify-between items-center text-black bg-slate-300 p-3 space-y-2 md:space-y-0">
+        {/* Phone */}
+        <span className="flex items-center space-x-2 cursor-pointer underline hover:text-blue-500">
+          <Phone size={20} />
           <span>+92 300 1234567</span>
         </span>
-        <span className="text-black flex space-x-2 pl-12 ml-10">
-          <FaFacebook
-            size={30}
-            className="hover:text-yellow-500 cursor-pointer hover:transition-all duration-300 ease-in-out hover:scale-105"
-          />
-          <FaInstagram
-            size={30}
-            className="hover:text-yellow-500 cursor-pointer hover:transition-all duration-300 ease-in-out hover:scale-105"
-          />
-          <FaLinkedin
-            size={30}
-            className="hover:text-yellow-500 cursor-pointer hover:transition-all duration-300 ease-in-out hover:scale-105"
-          />
-          <FaTwitter
-            size={30}
-            className="hover:text-yellow-500 cursor-pointer hover:transition-all duration-300 ease-in-out hover:scale-105"
-          />
+
+        {/* Social Icons */}
+        <span className="flex space-x-3">
+          {[FaFacebook, FaInstagram, FaLinkedin, FaTwitter].map((Icon, i) => (
+            <Icon
+              key={i}
+              size={25}
+              className="hover:text-yellow-500 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+            />
+          ))}
         </span>
-        <span className=" items-center flex">
-          <select className="bg-none border-2 bg-gray-100  rounded-2xl  w-24 h-6 ml-10">
+
+        {/* Language + Hours */}
+        <span className="flex items-center space-x-3">
+          <select className="border bg-gray-100 rounded-xl w-24 h-7 text-sm">
             <option value="en">English</option>
             <option value="ur">Urdu</option>
             <option value="ar">Arabic</option>
             <option value="fr">French</option>
           </select>
-          <p className="ml-5 mr-10"> Open hour: 8.00 - 18.00</p>
+          <p className="text-sm">Open hour: 8.00 - 18.00</p>
         </span>
       </nav>
-      <div className="p-9 items-center justify-between flex pl-4">
-        <span className="items-center flex ml-6 hover:text-blue-800 cursor-pointer space-x-1">
+
+      {/* Middle Bar */}
+      <div className="p-4 flex flex-col md:flex-row items-center justify-between">
+        {/* Email */}
+        <span className="flex items-center space-x-2 text-sm md:text-base cursor-pointer hover:text-blue-800">
           <Mail />
           <p>info@gmail.com</p>
         </span>
+
+        {/* Logo */}
         <img
           src="https://html.design/demo/romofyi/images/logo.png"
-          alt=""
-          className="cursor-pointer"
+          alt="Logo"
+          className="cursor-pointer my-3 md:my-0 w-32 md:w-40"
         />
-        <span className="flex space-x-5">
-          <FaShoppingBag size={30} className="text-blue-950 " />
-          <button className="bg-blue-950 text-white  rounded-3xl w-36 h-8 hover:bg-yellow-600 mr-10 transition-all duration-700 ease-in-out hover:scale-105">
+
+        {/* Bag + Button */}
+        <span className="flex items-center space-x-4">
+          <FaShoppingBag size={25} className="text-blue-950" />
+          <button className="bg-blue-950 text-white rounded-3xl px-5 py-1 text-sm md:text-base hover:bg-yellow-600 transition-all duration-500 ease-in-out hover:scale-105">
             Order Now
           </button>
         </span>
       </div>
-      <div className="bg-blue-950 mt-0 min-w-full  flex">
-        <a href="/">
-          <div className="bg-blue-950 ml-20 w-[100px] h-20 hover:bg-yellow-600 transition-all duration-500 ease-in-out flex items-center justify-center">
-            <span className="text-white  text-lg">HOME</span>
-          </div>
-        </a>
-        <a href="/about">
-          <div className="bg-blue-950 w-[100px] h-20 hover:bg-yellow-600 transition-all duration-500 ease-in-out flex items-center justify-center">
-            <span className="text-white  text-lg">ABOUT</span>
-          </div>
-        </a>
-        <a href="/products">
-          <div className="bg-blue-950 w-[120px] h-20 hover:bg-yellow-600 transition-all duration-500 ease-in-out flex items-center justify-center">
-            <span className="text-white  text-lg">PRODUCTS</span>
-          </div>
-        </a>
-        <a href="/fashion">
-          <div className="bg-blue-950 w-[100px] h-20 hover:bg-yellow-600 transition-all duration-500 ease-in-out flex items-center justify-center">
-            <span className="text-white  text-lg">FASHION</span>
-          </div>
-        </a>{" "}
-        <a href="/news">
-          <div className="bg-blue-950 w-[100px] h-20 hover:bg-yellow-600 transition-all duration-500 ease-in-out flex items-center justify-center">
-            <span className="text-white  text-lg">NEWS</span>
-          </div>
-        </a>{" "}
-        <a href="/contacts">
-          <div className="bg-blue-950 w-[125px] h-20 hover:bg-yellow-600 transition-all duration-500 ease-in-out flex items-center justify-center">
-            <span className="text-white  text-lg">CONTACT US</span>
-          </div>
-        </a>
-        <div className="relative w-96 mt-5 ml-10">
-          <FiSearch className="absolute left-[350px] top-5 mb-[10px] transform -translate-y-1/2 text-gray-500" />
+
+      {/* Navbar */}
+      <div className="bg-blue-950 flex flex-wrap items-center justify-center md:justify-start">
+        {[
+          { label: "HOME", link: "/" },
+          { label: "ABOUT", link: "/about" },
+          { label: "PRODUCTS", link: "/products" },
+          { label: "FASHION", link: "/fashion" },
+          { label: "NEWS", link: "/news" },
+          { label: "CONTACT US", link: "/contacts" },
+        ].map((item, i) => (
+          <a key={i} href={item.link}>
+            <div className="px-5 py-4 hover:bg-yellow-600 transition duration-300 flex items-center justify-center">
+              <span className="text-white text-sm md:text-lg">
+                {item.label}
+              </span>
+            </div>
+          </a>
+        ))}
+
+        {/* Search Bar */}
+        <div className="relative w-full md:w-80 p-3">
+          <FiSearch className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-500" />
           <input
             type="text"
             placeholder="Search"
-            className="w-full pl-10 pr-4 py-2 border bg-gray-100 border-gray-300 rounded-full focus:outline-none  "
+            className="w-full pl-4 pr-10 py-2 border bg-gray-100 border-gray-300 rounded-full focus:outline-none text-sm md:text-base"
           />
         </div>
       </div>

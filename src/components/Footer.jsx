@@ -2,76 +2,59 @@ import React from "react";
 
 function Footer() {
   return (
-    <div>
-      <div className="relative w-full h-[500px] bg-blue-300 mt-60">
-        <div className="absolute -top-[100px] left-0 w-full h-44 flex justify-center space-x-14">
-          <div className="w-72 h-44 bg-white rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.5)] p-12">
-            <img
-              src="https://html.design/demo/romofyi/images/icon_mony.png"
-              alt=""
-              className="ml-14"
-            />
-            <h1 className="ml-12">Money Back</h1>
-          </div>
-          <div className="w-72 h-44 bg-white rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.5)] p-12">
-            <img
-              src="https://html.design/demo/romofyi/images/icon_gift.png"
-              alt=""
-              className="ml-14"
-            />
-            <h1 className="ml-14">Special Gift</h1>
-          </div>{" "}
-          <div className="w-72 h-44 bg-white rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.5)] p-12">
-            <img
-              src="https://html.design/demo/romofyi/images/icon_car.png"
-              alt=""
-              className="ml-14"
-            />
-            <h1 className="ml-12">Free Shipping</h1>
-          </div>
+    <div className="w-full">
+      {/* Top Cards */}
+      <div className="relative w-full mt-40 ">
+        <div className="absolute -top-20 left-0 w-full flex flex-col md:flex-row items-center justify-center md:space-x-14 space-y-6 md:space-y-0 px-4">
+          {/* Card */}
+          {[
+            {
+              img: "https://html.design/demo/romofyi/images/icon_mony.png",
+              text: "Money Back",
+            },
+            {
+              img: "https://html.design/demo/romofyi/images/icon_gift.png",
+              text: "Special Gift",
+            },
+            {
+              img: "https://html.design/demo/romofyi/images/icon_car.png",
+              text: "Free Shipping",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="w-full sm:w-72 h-40 bg-white rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.3)] p-6 flex flex-col items-center justify-center"
+            >
+              <img src={item.img} alt="" className="w-12 mb-2" />
+              <h1 className="text-lg font-semibold">{item.text}</h1>
+            </div>
+          ))}
         </div>
-        <div className="w-full mt-0 p-20 h-[500px] bg-blue-950 flex text-xl space-x-2">
-          <div className="mt-8 p-6 text-white ">
-            <h1 className="text-white text-2xl mb-5 font-bold">INFORMATION</h1>
-            <p>
-              There are many variations of <br /> passages of Lorem <br /> Ipsum
-              available, but the <br /> majority have suffered <br /> alteration
-              in some form, <br /> by injected humour, or <br /> randomised
-              words which <br /> don't look even slightly <br /> believable
-            </p>
-          </div>
-          <div className="mt-8 p-6 text-white ">
-            <h1 className="text-white text-2xl mb-5 font-bold">MY ACCOUNT</h1>
-            <p>
-              There are many variations of <br /> passages of Lorem <br /> Ipsum
-              available, but the <br /> majority have suffered <br /> alteration
-              in some form, <br /> by injected humour, or <br /> randomised
-              words which <br /> don't look even slightly <br /> believable
-            </p>
-          </div>
-          <div className="mt-8 p-6 text-white ">
-            <h1 className="text-white text-2xl mb-5 font-bold">ABOUT</h1>
-            <p>
-              There are many variations of <br /> passages of Lorem <br /> Ipsum
-              available, but the <br /> majority have suffered <br /> alteration
-              in some form, <br /> by injected humour, or <br /> randomised
-              words which <br /> don't look even slightly <br /> believable
-            </p>
-          </div>
-          <div className="mt-8 p-6 text-white ">
-            <h1 className="text-white text-2xl mb-5 font-bold">CONTACTS</h1>
-            <p>
-              There are many variations of <br /> passages of Lorem <br /> Ipsum
-              available, but the <br /> majority have suffered <br /> alteration
-              in some form, <br /> by injected humour, or <br /> randomised
-              words which <br /> don't look even slightly <br /> believable
-            </p>
-          </div>
+
+        {/* Main Footer Section */}
+        <div className="w-full mt-40 md:mt-32 px-6 py-12 h-[500px] bg-blue-950 text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {["INFORMATION", "MY ACCOUNT", "ABOUT", "CONTACTS"].map(
+            (title, i) => (
+              <div key={i} className="flex flex-col mt-28">
+                <h1 className="text-xl md:text-2xl mb-4 font-bold">{title}</h1>
+                <p className="text-sm md:text-base leading-6 opacity-90">
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour, or randomised words which don’t look
+                  even slightly believable.
+                </p>
+              </div>
+            )
+          )}
         </div>
       </div>
-      <div className="flex space-x-1 justify-center   p-8">
-        <h1>© 2019 All Rights Reserved. Design by</h1>
-        <button className="bg-none hover:text-yellow-600">
+
+      {/* Bottom Bar */}
+      <div className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-2 p-6 text-center">
+        <h1 className="text-sm md:text-base">
+          © 2019 All Rights Reserved. Design by
+        </h1>
+        <button className="text-blue-600 hover:text-yellow-600 text-sm md:text-base">
           Free Html Templates
         </button>
       </div>
