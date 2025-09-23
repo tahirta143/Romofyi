@@ -1,9 +1,10 @@
 import React from "react";
+import Image from "next/image";
 
 function Home() {
   return (
     <div>
-      <div className="flex bg-[url('public\bg.jpg')] bg-cover bg-center">
+      <div className="flex bg-[url('/bg.jpg')] bg-cover bg-center">
         <div className="mt-40 ml-10  space-x-2">
           <h1 className="text-7xl font-extrabold mt-6 p-6 text-blue-950">
             Romofyi
@@ -19,13 +20,13 @@ function Home() {
           </button>
         </div>
         <div className="mt-[150px] ml-60  w-96 ">
-          <img src="/girl.jpg" alt="" />
+          <Image src="/girl.jpg" alt="" />
         </div>
       </div>
       <div className="flex mt-3">
         <div className="w-52 h-52 bg-yellow-600">
           {" "}
-          <img
+          <Image
             src="https://html.design/demo/romofyi/images/shoes.png"
             alt=""
             className="ml-12 mt-14"
@@ -34,7 +35,7 @@ function Home() {
         </div>
         <div className="w-52 h-52 bg-blue-950">
           {" "}
-          <img
+          <Image
             src="https://html.design/demo/romofyi/images/underwear.png"
             alt=""
             className="ml-12 mt-14"
@@ -43,7 +44,7 @@ function Home() {
         </div>{" "}
         <div className="w-52 h-52 bg-yellow-600">
           {" "}
-          <img
+          <Image
             src="https://html.design/demo/romofyi/images/pent.png"
             alt=""
             className="ml-12 mt-14"
@@ -52,7 +53,7 @@ function Home() {
         </div>{" "}
         <div className="w-52 h-52 bg-blue-950">
           {" "}
-          <img
+          <Image
             src="https://html.design/demo/romofyi/images/t_shart.png"
             alt=""
             className="ml-12 mt-14"
@@ -61,7 +62,7 @@ function Home() {
         </div>{" "}
         <div className="w-52 h-52 bg-yellow-600">
           {" "}
-          <img
+          <Image
             src="https://html.design/demo/romofyi/images/jakit.png"
             alt=""
             className="ml-12 mt-14"
@@ -70,7 +71,7 @@ function Home() {
         </div>{" "}
         <div className="w-56 h-52 bg-blue-950">
           {" "}
-          <img
+          <Image
             src="https://html.design/demo/romofyi/images/helbet.png"
             alt=""
             className="ml-16 mt-14"
@@ -86,7 +87,7 @@ function Home() {
       <div>
         <div className="w-full h-[300px] flex flex-wrap justify-center space-x-6 mt-10">
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/shoes1.png"
               alt=""
               className="ml-6 mt-8"
@@ -94,7 +95,7 @@ function Home() {
             <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
           </div>
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/shoes2.png"
               alt=""
               className="ml-6 mt-8"
@@ -102,7 +103,7 @@ function Home() {
             <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
           </div>{" "}
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/shoes3.png"
               alt=""
               className="ml-6 mt-8"
@@ -110,7 +111,7 @@ function Home() {
             <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
           </div>{" "}
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/shoes4.png"
               alt=""
               className="ml-6 mt-8"
@@ -118,7 +119,7 @@ function Home() {
             <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
           </div>{" "}
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/shoes5.png"
               alt=""
               className="ml-6 mt-8"
@@ -128,7 +129,7 @@ function Home() {
         </div>
         <div className="w-full h-[300px] flex flex-wrap justify-center space-x-6 mt-10">
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/tisat1.png"
               alt=""
               className="ml-6 mt-8"
@@ -136,7 +137,7 @@ function Home() {
             <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
           </div>
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/tisat2.png"
               alt=""
               className="ml-6 mt-8"
@@ -144,7 +145,7 @@ function Home() {
             <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
           </div>{" "}
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/tisat3.png"
               alt=""
               className="ml-6 mt-8"
@@ -152,7 +153,7 @@ function Home() {
             <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
           </div>{" "}
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/tisat4.png"
               alt=""
               className="ml-6 mt-8"
@@ -160,7 +161,7 @@ function Home() {
             <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
           </div>{" "}
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/tisat5.png"
               alt=""
               className="ml-6 mt-8"
@@ -170,7 +171,7 @@ function Home() {
         </div>
         <div className="w-full h-[300px] flex flex-wrap justify-center space-x-6 mt-10">
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/mix1.png"
               alt=""
               className="ml-6 mt-8"
@@ -178,7 +179,7 @@ function Home() {
             <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
           </div>
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/mix2.png"
               alt=""
               className="ml-6 mt-8"
@@ -186,7 +187,7 @@ function Home() {
             <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
           </div>{" "}
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/mix3.png"
               alt=""
               className="ml-6 mt-8"
@@ -194,7 +195,7 @@ function Home() {
             <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
           </div>{" "}
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/mix4.png"
               alt=""
               className="ml-6 mt-8"
@@ -202,7 +203,7 @@ function Home() {
             <h1 className="mt-[90px]">Short Openwork Cardigan $120.00</h1>
           </div>{" "}
           <div className="w-52 h-64  bg-[#f2f2f2]">
-            <img
+            <Image
               src="https://html.design/demo/romofyi/images/mix5.png"
               alt=""
               className="ml-6 mt-8"
@@ -217,13 +218,16 @@ function Home() {
         </div>
       </div>
       <div className="mt-20">
-        <img src="https://html.design/demo/romofyi/images/fashion.jpg" alt="" />
+        <Image
+          src="https://html.design/demo/romofyi/images/fashion.jpg"
+          alt=""
+        />
       </div>
       <div>
         <h1 className="text-4xl font-semibold ml-20 mt-20">Letest News</h1>
         <div className="w-[1100px] h-2 ml-20 bg-yellow-600"></div>
         <div className="flex  mt-8 justify-center space-x-6">
-          <img
+          <Image
             src="https://html.design/demo/romofyi/images/news_img1.jpg"
             alt=""
             className="mr-7"
@@ -238,7 +242,7 @@ function Home() {
             </div>
             <p className="mt-16">
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. <br /> Lorem Ipsum has been the industry's standard
+              industry. <br /> Lorem Ipsum has been the industry&apos;s standard
               dummy text ever since the <br /> 1500s, when an unknown printer
               took a galley of type and scrambled it to <br /> make a type
               specimen book.
@@ -246,7 +250,7 @@ function Home() {
           </div>
         </div>
         <div className="flex  mt-8 justify-center space-x-6">
-          <img
+          <Image
             src="https://html.design/demo/romofyi/images/news_img2.jpg"
             alt=""
             className="mr-7"
@@ -261,7 +265,7 @@ function Home() {
             </div>
             <p className="mt-16">
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. <br /> Lorem Ipsum has been the industry's standard
+              industry. <br /> Lorem Ipsum has been the industry&apos;s standard
               dummy text ever since the <br /> 1500s, when an unknown printer
               took a galley of type and scrambled it to <br /> make a type
               specimen book.
@@ -269,7 +273,7 @@ function Home() {
           </div>
         </div>
         <div className="flex  mt-8 justify-center space-x-6">
-          <img
+          <Image
             src="https://html.design/demo/romofyi/images/news_img3.jpg"
             alt=""
             className="mr-7"
@@ -284,7 +288,7 @@ function Home() {
             </div>
             <p className="mt-16">
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. <br /> Lorem Ipsum has been the industry's standard
+              industry. <br /> Lorem Ipsum has been the industry&apos;s standard
               dummy text ever since the <br /> 1500s, when an unknown printer
               took a galley of type and scrambled it to <br /> make a type
               specimen book.
