@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "./hero";
+import Hero from "./hero/page";
 import Products from "./products/page";
 import Fashion from "./fashion/page";
 import News from "./news/page";
