@@ -1,8 +1,8 @@
 import React from "react";
-import Hero from "./Hero";
+import Hero from "./hero";
 import Products from "./Products/page";
-import Fashion from "./Fashion/page";
-import News from "./News/page";
+import Fashion from "./fashion/page";
+import News from "./news/page";
 
 export default function Page() {
   return (
