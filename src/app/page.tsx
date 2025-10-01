@@ -4,7 +4,7 @@ import Products from "./Products/page";
 import Fashion from "./Fashion/page";
 import News from "./News/page";
 
-function page() {
+export default function Page() {
   return (
     <div>
       <Hero />
@@ -14,5 +14,3 @@ function page() {
     </div>
   );
 }
-
-export default page;
