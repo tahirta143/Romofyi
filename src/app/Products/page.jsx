@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-function Products() {
+function Product() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
