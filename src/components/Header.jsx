@@ -1,6 +1,8 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import { Mail, Phone } from "lucide-react";
+import Link from "next/link";
+import { Mail, Phone, Menu, X } from "lucide-react";
 import {
   FaFacebook,
   FaInstagram,
@@ -10,6 +12,8 @@ import {
 } from "react-icons/fa";
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="w-full">
       {/* Top Bar */}
@@ -21,12 +25,12 @@ function Header() {
         </span>
 
         {/* Social Icons */}
-        <span className="flex space-x-3">
+        <span className="flex space-x-3 ml-18">
           {[FaFacebook, FaInstagram, FaLinkedin, FaTwitter].map((Icon, i) => (
             <Icon
               key={i}
-              size={25}
-              className="hover:text-yellow-500 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+              size={22}
+              className="hover:text-yellow-500  cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
             />
           ))}
         </span>
@@ -67,34 +71,79 @@ function Header() {
         </span>
       </div>
 
-      {/* Navbar */}
-      <div className="bg-blue-950 flex flex-wrap items-center justify-center md:justify-start">
-        {[
-          { label: "HOME", link: "/" },
-          { label: "ABOUT", link: "/about" },
-          { label: "PRODUCTS", link: "/products" },
-          { label: "FASHION", link: "/fashion" },
-          { label: "NEWS", link: "/news" },
-          { label: "CONTACT US", link: "/contacts" },
-        ].map((item, i) => (
-          <a key={i} href={item.link}>
-            <div className="px-5 py-4 hover:bg-yellow-600 transition duration-300 flex items-center justify-center">
-              <span className="text-white text-sm md:text-lg">
-                {item.label}
-              </span>
-            </div>
-          </a>
-        ))}
-
-        {/* Search Bar */}
-        <div className="relative w-full md:w-80 p-3">
-          <FiSearch className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-500" />
-          <input
-            type="text"
-            placeholder="Search"
-            className="w-full pl-4 pr-10 py-2 border bg-gray-100 border-gray-300 rounded-full focus:outline-none text-sm md:text-base"
-          />
+      {/* Bottom Nav */}
+      <div className="w-full bg-blue-950 md:flex md:items-center md:justify-between relative">
+        {/* Hamburger for Mobile */}
+        <div className="flex justify-between items-center p-4 md:hidden">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-white focus:outline-none"
+          >
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex ml-11 flex-wrap items-center justify-center md:justify-start">
+          {[
+            { label: "HOME", link: "/" },
+            { label: "ABOUT", link: "/About" },
+            { label: "PRODUCTS", link: "/Products" },
+            { label: "FASHION", link: "/Fashion" },
+            { label: "NEWS", link: "/News" },
+            { label: "CONTACT US", link: "/Contacts" },
+          ].map((item, i) => (
+            <Link key={i} href={item.link}>
+              <div className="px-5 py-4 hover:bg-yellow-600 transition duration-300 flex items-center justify-center">
+                <span className="text-white text-sm md:text-lg">
+                  {item.label}
+                </span>
+              </div>
+            </Link>
+          ))}
+
+          {/* Search Bar */}
+          <div className="relative w-full md:w-80 p-3">
+            <FiSearch className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-500" />
+            <input
+              type="text"
+              placeholder="Search"
+              className="w-full pl-4 pr-10 py-2 border bg-gray-100 border-gray-300 rounded-full focus:outline-none text-sm md:text-base"
+            />
+          </div>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        {menuOpen && (
+          <div className="flex flex-col bg-blue-950 md:hidden px-6 pb-4 space-y-2">
+            {[
+              { label: "HOME", link: "/" },
+              { label: "ABOUT", link: "/About" },
+              { label: "PRODUCTS", link: "/Products" },
+              { label: "FASHION", link: "/Fashion" },
+              { label: "NEWS", link: "/News" },
+              { label: "CONTACT US", link: "/Contacts" },
+            ].map((item, i) => (
+              <a
+                key={i}
+                href={item.link}
+                className="py-2 text-white hover:bg-yellow-600 rounded-md text-center transition"
+              >
+                {item.label}
+              </a>
+            ))}
+
+            {/* Mobile Search */}
+            <div className="relative w-full">
+              <FiSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500" />
+              <input
+                type="text"
+                placeholder="Search"
+                className="w-full pl-4 pr-10 py-2 border bg-gray-100 border-gray-300 rounded-full focus:outline-none text-sm"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

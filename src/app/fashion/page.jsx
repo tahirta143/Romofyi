@@ -2,15 +2,12 @@ import React from "react";
 
 function Fashion() {
   return (
-    <div>
-      <div className="bg-yellow-600 w-full  items-center p-8">
-        <h1 className="ml-[560px] text-4xl font-semibold text-white">
-          Fashion
-        </h1>
-      </div>
-      <div className="mt-20">
-        <img src="https://html.design/demo/romofyi/images/fashion.jpg" alt="" />
-      </div>
+    <div className="mt-20 px-4">
+      <img
+        src="https://html.design/demo/romofyi/images/fashion.jpg"
+        alt="Fashion banner"
+        className="w-full max-w-7xl mx-auto rounded-lg object-cover"
+      />
     </div>
   );
 }
