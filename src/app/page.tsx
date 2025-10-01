@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../app/Hero/page";
-import Products from "../app/Products/page";
+import Products from "./products/page";
 import Fashion from "./fashion/page";
 import News from "./news/page";
 

@@ -87,11 +87,11 @@ function Header() {
         <div className="hidden md:flex ml-11 flex-wrap items-center justify-center md:justify-start">
           {[
             { label: "HOME", link: "/" },
-            { label: "ABOUT", link: "/About" },
-            { label: "PRODUCTS", link: "/Products" },
-            { label: "FASHION", link: "/Fashion" },
-            { label: "NEWS", link: "/News" },
-            { label: "CONTACT US", link: "/Contacts" },
+            { label: "ABOUT", link: "/about" },
+            { label: "PRODUCTS", link: "/products" },
+            { label: "FASHION", link: "/fashion" },
+            { label: "NEWS", link: "/news" },
+            { label: "CONTACT US", link: "/contacts" },
           ].map((item, i) => (
             <Link key={i} href={item.link}>
               <div className="px-5 py-4 hover:bg-yellow-600 transition duration-300 flex items-center justify-center">
